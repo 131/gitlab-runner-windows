@@ -13,12 +13,12 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build and push Docker images
-        uses: docker/build-push-action@v4
+        uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          push: false
-          repository: 131hub/gitlab-runner
+          image: 131hub/gitlab-runner
+          tags: latest
+          registry: docker.io
+          pushImage: false
       - name: Test
         run: |
-          docker run --rm 131hub/gitlab-runner -v
+          docker run --rm 131hub/gitlab-runner:latest -v
