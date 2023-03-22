@@ -11,3 +11,4 @@ RUN net localgroup Administrators /add admin
 USER admin
 ENTRYPOINT c:/apps/bin/gitlab-runner.exe
 CMD run
+LABEL "org.opencontainers.image.version"="0.0.1"
