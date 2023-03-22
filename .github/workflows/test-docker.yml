@@ -2,15 +2,12 @@ name: test-docker
 on:
   - push
 jobs:
-  publish-docker:
+  test-docker:
     runs-on: windows-latest
     steps:
 
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
 
       - name: Build and push Docker images
         uses: mr-smithers-excellent/docker-build-push@v6
