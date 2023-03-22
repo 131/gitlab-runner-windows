@@ -14,7 +14,7 @@ jobs:
       - name: Build and push Docker images
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: 131hub/gitlab-runner
+          image: 131hub/gitlab-runner-windows
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}

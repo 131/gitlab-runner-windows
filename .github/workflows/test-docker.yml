@@ -12,10 +12,10 @@ jobs:
       - name: Build and push Docker images
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: 131hub/gitlab-runner
+          image: 131hub/gitlab-runner-windows
           tags: latest
           registry: docker.io
           pushImage: false
       - name: Test
         run: |
-          docker run --rm 131hub/gitlab-runner:latest -v
+          docker run --rm 131hub/gitlab-runner-windows:latest -v
