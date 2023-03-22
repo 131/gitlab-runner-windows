@@ -1,11 +1,23 @@
 Use with
 
+[![Image pulls](https://img.shields.io/docker/pulls/131hub/gitlab-runner-windows)](https://hub.docker.com/r/131hub/gitlab-runner-windows)
+[![Image version](https://img.shields.io/docker/v/131hub/gitlab-runner-windows)](https://hub.docker.com/r/131hub/gitlab-runner-windows)
+[![Image size](https://img.shields.io/docker/image-size/131hub/gitlab-runner-windows)](https://hub.docker.com/r/131hub/gitlab-runner-windows)
+
+
+
+# Motivation
+
+[`131hub/gitlab-runner-windows`](https://hub.docker.com/r/131hub/gitlab-runner-windows) is a **docker image** bringing simple gitlab-runner windows container.
+
+
+
+# Usage in a swarm
 ```
 services:
   shellwin-ivscloud-local:
-    image: 131hub/gitab-runner
+    image: 131hub/gitlab-runner-windows
 
-#    entrypoint: ["cmd.exe", "/c", "npm start"]
     entrypoint: ["powershell.exe", "-command"]
     command: |
       # connect to local NAT and change default route to it
