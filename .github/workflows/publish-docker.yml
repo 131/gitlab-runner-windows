@@ -1,8 +1,8 @@
 name: publish-docker
 on:
-create:
-  tags:
-    - 'v*'
+  create:
+    tags:
+      - 'v*'
 jobs:
   publish-docker:
     runs-on: windows-latest
