@@ -6,6 +6,7 @@ RUN tar -xvf docker.zip
 RUN mkdir tmp && tar -xvf gitlab-runner.zip -C tmp
 
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
+WORKDIR c:/apps/bin
 COPY --from=builder docker/docker.exe docker.exe
 COPY --from=builder tmp/out/binaries/gitlab-runner-windows-amd64.exe gitlab-runner.exe
 RUN setx /M PATH "%PATH%;c:/apps/bin"
